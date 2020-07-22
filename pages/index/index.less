@@ -1,0 +1,74 @@
+// 轮播图 开始
+///* 由于swiper image 都有默认的宽高，分别是 100%* 150px  320px * 240px 。所以需要设置这里的宽高 */
+.index_swiper {
+  swiper{
+    width: 750rpx;
+    height: 340rpx;
+    .swiper_item {
+      image{
+        width: 100%;
+      }
+    }
+  }
+}
+
+// 轮播图 结束
+
+//导航栏 开始
+.index_cate {
+  display: flex;
+  
+  .cate_items {
+    flex: 1;
+    padding: 30rpx;
+    image{
+      width: 100%;
+    }
+  }
+}
+// 导航栏 结束
+
+
+// 楼层区 开始
+.index_floor{
+  .floor_ground{
+    .floor_title{
+      padding: 10rpx 0;
+      image{
+        width: 100%;
+      }
+    }
+
+    .floor_content{
+      // 清除浮动
+      overflow: hidden;
+      navigator{
+        float: left;
+        width: 33.33%;
+      
+        /* 后面四个超链接 */
+        &:nth-last-child(-n+4){
+          /* 
+          原图的宽高 232*386
+          232 / 386 = 33.33vw/ height
+          第一张图片的高度 height:386*33.33vw / 232
+          */
+          height:386*33.33vw / 232 / 2;
+          border-left: 10rpx solid #fff;
+        }
+        /* 2 3  超链接*/
+        &:nth-child(2),
+        &:nth-child(3){
+          border-bottom: 10rpx solid #fff;
+        }
+        image{
+          width: 100%;
+          height: 100%;
+        }
+      }
+      
+    }
+  }
+
+}
+// 楼层区 结束

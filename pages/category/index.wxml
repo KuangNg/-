@@ -1,0 +1,32 @@
+<!--pages/category/index.wxml-->
+<view class="cate_index">
+    <SearchInput></SearchInput>
+    <view class="cates_wrap">
+        <!-- 左侧菜单  -->
+            <scroll-view class="left_memuList"  scroll-y >
+                <view class="memu" wx:for="{{leftMemuList}}" wx:key = "*this">
+                    <view class="memu_item {{currentIndex===index?'active':''}}" bindtap = "handleChangeTab" data-index="{{index}}">{{item}}</view>
+                </view>
+                
+            </scroll-view>
+
+        <!-- 右侧商品 -->
+            <scroll-view class="right_contents"  scroll-y scroll-top="{{scrollTop}}">
+                <view class="goods_ground" wx:for="{{rightContents}}" wx:key = "cat_id" wx:for-index="index1" wx:for-item="item1">
+                    <view class="goods_title">
+                        <text class="delimiter">/</text>
+                        <text class="title">{{item1.cat_name}}</text>
+                        <text class="delimiter">/</text>
+                    </view>
+                    <view class="goods_list">
+                        <navigator class="goods_item"  wx:for="{{item1.children}}" wx:key = "cat_id" 
+                        wx:for-index="index2" wx:for-item="item2" url="/pages/goods_list/index?cat_id={{item2.cat_id}}">
+                            <image mode="widthFix" src="{{item2.cat_icon}}"></image>
+                            <view class="goods_name">{{item2.cat_name}}</view>
+                        </navigator>
+                    </view>
+                </view>
+            </scroll-view>
+
+    </view>
+</view>

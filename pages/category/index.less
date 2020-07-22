@@ -1,0 +1,76 @@
+/* pages/category/index.wxss */
+page {
+    height: 100%;
+}
+
+.cate_index {
+    height: 100%;
+
+    .cates_wrap {
+        /* less 中使用calc的时候要注意 */
+        height: ~'calc(100vh - 90rpx)';
+        display: flex;
+        margin-top: 10rpx;
+
+        .left_memuList {
+            flex: 2;
+
+            .memu{
+                .memu_item {
+                    height: 80rpx;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 30rpx;
+                }
+    
+                .active {
+                    color: var(--themeColor);
+                    border-left: 5rpx solid currentColor;
+                }
+            }
+
+        }
+
+
+        .right_contents {
+            flex: 5;
+
+            .goods_ground {
+                .goods_title {
+                    height: 80rpx;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .delimiter {
+                        color: #ccc;
+                    }
+
+                    .title {
+                        color: #666;
+                        padding: 0 10rpx;
+                    }
+
+                }
+
+                .goods_list {
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    .goods_item {
+                        width: 33.33%;
+                        text-align: center;
+
+                        image {
+                            width: 50%;
+                        }
+
+                        .goods_name {}
+                    }
+                }
+            }
+        }
+    }
+
+}

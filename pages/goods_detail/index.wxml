@@ -1,0 +1,51 @@
+<!--pages/goods_detail/index.wxml-->
+<view class="goodsDetail">
+    <view class="detail_swiper">
+        <swiper autoplay circular indicator-dots>
+            <swiper-item class="" item-id="" wx:for="{{goodsObj.pics}}" wx:key="pics_id">
+                <image src="{{item.pics_mid}}" mode="widthFix" bindtap="handlePreviewImage"
+                    data-imgsrc="{{item.pics_mid}}">
+                </image>
+            </swiper-item>
+        </swiper>
+        <view class="goodsInfo">
+            <view class="goods_price">￥{{goodsObj.goods_price}}</view>
+            <view class="goods_name_row">
+                <view class="goods_name">{{goodsObj.goods_name}}</view>
+                <view class="goods_collect" bindtap="handleCollect">
+                    <text class="iconfont {{isCollect?'icon-favorite-copy':'icon-favorite'}}"></text>
+                    <view class="collect_text">收藏</view>
+                </view>
+            </view>
+        </view>
+        <view class="goodsDetailInfo">
+            <view class="text">图文详情</view>
+            <view class="goods_info_content">
+                <!-- 富文本 -->
+                <rich-text class="" nodes="{{goodsObj.goods_introduce}}"></rich-text>
+            </view>
+        </view>
+    </view>
+    <view class="btm_tools">
+        <view class="tool_item">
+            <view class="iconfont icon-customer-service"></view>
+            <view class="tool_name">客服</view>
+            <button open-type="contact"></button>
+        </view>
+        <view class="tool_item">
+            <view class="iconfont icon-share_icon"></view>
+            <view class="tool_name">分享</view>
+            <button open-type="share"></button>
+        </view>
+        <navigator class="tool_item" open-type="switchTab" url="/pages/cart/index" >
+            <view class="iconfont icon-cart-Empty"></view>
+            <view class="tool_name">购物车</view>
+        </navigator>
+        <view class="tool_item btn_cart" bindtap = "handleCartAdd">
+           加入购物车
+        </view>
+        <view class="tool_item btn_buy" bindtap="handlePay">
+            立即购买
+        </view>
+    </view>
+</view>

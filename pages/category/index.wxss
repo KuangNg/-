@@ -1,0 +1,54 @@
+/* pages/category/index.wxss */
+page {
+  height: 100%;
+}
+.cate_index {
+  height: 100%;
+}
+.cate_index .cates_wrap {
+  /* less 中使用calc的时候要注意 */
+  height: calc(100vh - 90rpx);
+  display: flex;
+  margin-top: 10rpx;
+}
+.cate_index .cates_wrap .left_memuList {
+  flex: 2;
+}
+.cate_index .cates_wrap .left_memuList .memu .memu_item {
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+.cate_index .cates_wrap .left_memuList .memu .active {
+  color: var(--themeColor);
+  border-left: 5rpx solid currentColor;
+}
+.cate_index .cates_wrap .right_contents {
+  flex: 5;
+}
+.cate_index .cates_wrap .right_contents .goods_ground .goods_title {
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cate_index .cates_wrap .right_contents .goods_ground .goods_title .delimiter {
+  color: #ccc;
+}
+.cate_index .cates_wrap .right_contents .goods_ground .goods_title .title {
+  color: #666;
+  padding: 0 10rpx;
+}
+.cate_index .cates_wrap .right_contents .goods_ground .goods_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cate_index .cates_wrap .right_contents .goods_ground .goods_list .goods_item {
+  width: 33.33%;
+  text-align: center;
+}
+.cate_index .cates_wrap .right_contents .goods_ground .goods_list .goods_item image {
+  width: 50%;
+}

@@ -1,0 +1,4 @@
+<view class="getUser">
+    <!-- getUserInfo	获取用户信息，可以从bindgetuserinfo回调中获取到用户信息 -->
+    <button open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo" type="warn">用户授权</button>
+</view>
